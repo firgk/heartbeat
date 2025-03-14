@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>客户端状态</title>
+    <script>
+        // 每2秒刷新一次页面
+        setInterval(function() {
+            location.reload();
+        }, 2000);
+    </script>
+</head>
+<body>
+    <h1>客户端状态</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>客户端地址</th>
+                <th>状态</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for client, status in clients.items() %}
+            <tr>
+                <td>{{ client }}</td>
+                <td>{{ status }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
